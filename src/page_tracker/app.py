@@ -1,8 +1,7 @@
+import os
 from functools import cache
 
 from flask import Flask
-import os
-
 from redis import Redis, RedisError
 
 app = Flask(__name__)
