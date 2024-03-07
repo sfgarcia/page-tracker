@@ -2,13 +2,13 @@ import unittest.mock
 
 import pytest
 
-from src.page_tracker.app import app
+from page_tracker.app import app
 
 @pytest.fixture
 def http_client():
     return app.test_client()
 
-@unittest.mock.patch("src.page_tracker.app.redis")
+@unittest.mock.patch("page_tracker.app.redis")
 def test_should_call_redis_incr(mock_redis, http_client):
     # Given
     mock_redis.return_value.incr.return_value = 5
