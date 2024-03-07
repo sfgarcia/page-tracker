@@ -1,0 +1,18 @@
+version: "3.8"
+name: page-tracker
+services:
+  web-service:
+    build: .
+    ports:
+      - "80:5000"
+    environment:
+      - REDIS_URL=redis://redis-service:6379
+    depends_on:
+      - redis-service
+  redis-service:
+    image: redis:7.0.10-bullseye
+    volumes:
+      - redis-volume:/data
+volumes:
+  redis-volume:
+
