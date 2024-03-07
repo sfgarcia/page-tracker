@@ -6,3 +6,4 @@ Requires-Dist: redis
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-timeout; extra == "dev"
+Requires-Dist: requests; extra == "dev"
